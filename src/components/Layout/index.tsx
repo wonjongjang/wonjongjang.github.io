@@ -51,6 +51,11 @@ export default function Layout({
         <meta name="twitter:site" content="@사용자이름" />
         <meta name="twitter:creator" content="@사용자이름" />
 
+        <meta
+          name="google-site-verification"
+          content="lz6jkkwIl4-59M3vpHwBjlxhAswmWkwYjhHevpmfT9g"
+        />
+
         {/* 웹 접근성 */}
         <html lang="ko" />
       </Helmet>
