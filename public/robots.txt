@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://wonjongjang.github.io/sitemap-index.xml
-Host: https://wonjongjang.github.io
