@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "es5",
+    "module": "commonjs",
+    "allowJs": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src"],
+  "paths": {
+    "assets/*": ["assets/*"],
+    "components/*": ["components/*"],
+    "etc/*": ["etc/*"],
+    "hooks/*": ["hooks/*"],
+    "pages/*": ["pages/*"],
+    "styles/*": ["styles/*"],
+    "templates/*": ["templates/*"]
+  }
+}
