@@ -55,6 +55,10 @@ export default function Layout({
           name="google-site-verification"
           content="lz6jkkwIl4-59M3vpHwBjlxhAswmWkwYjhHevpmfT9g"
         />
+        <meta
+          name="naver-site-verification"
+          content="3f64aa84fd909733696623e2e7c97e84d3cb1233"
+        />
 
         {/* 웹 접근성 */}
         <html lang="ko" />
