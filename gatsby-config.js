@@ -108,7 +108,8 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
-    'gatsby-plugin-sitemap', // 사용자들이 방문할 수 있는 페이지의 목록 (검색 엔진에 노출되었으면 하는 페이지만을 Sitemap에 추가해 크롤링 속도를 개선)
+    // 'gatsby-plugin-sitemap', // 사용자들이 방문할 수 있는 페이지의 목록 (검색 엔진에 노출되었으면 하는 페이지만을 Sitemap에 추가해 크롤링 속도를 개선)
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
