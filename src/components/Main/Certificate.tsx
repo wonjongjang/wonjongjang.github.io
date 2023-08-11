@@ -7,51 +7,28 @@ export default function Certificate() {
     <S_Container>
       <S_Title>Certificate</S_Title>
       <S_TypeList>
-        {CERTIFICATE.map((c, i) =>
-          i < CERTIFICATE.length - 1 ? (
-            <S_Type key={i}>
-              <S_TypeTitle>{c.title}</S_TypeTitle>
-              <S_TypeContent>
-                <S_ContentWrapper>
-                  {c.desc1 ? (
-                    <S_Description>
-                      {c.desc1}
-                      <br />
-                      {c.desc2}
-                    </S_Description>
-                  ) : (
-                    <div />
-                  )}
-                  <S_DateWrapper>
-                    <span>{c.date}</span>
-                    <span>{c.host}</span>
-                  </S_DateWrapper>
-                </S_ContentWrapper>
-              </S_TypeContent>
-            </S_Type>
-          ) : (
-            <S_TypeEnd key={i}>
-              <S_TypeTitle>{c.title}</S_TypeTitle>
-              <S_TypeContent>
-                <S_ContentWrapper>
-                  {c.desc1 ? (
-                    <S_Description>
-                      {c.desc1}
-                      <br />
-                      {c.desc2}
-                    </S_Description>
-                  ) : (
-                    <div />
-                  )}
-                  <S_DateWrapper>
-                    <span>{c.date}</span>
-                    <span>{c.host}</span>
-                  </S_DateWrapper>
-                </S_ContentWrapper>
-              </S_TypeContent>
-            </S_TypeEnd>
-          ),
-        )}
+        {CERTIFICATE.map((c, i) => (
+          <S_Type key={i} isEnd={i === CERTIFICATE.length - 1}>
+            <S_TypeTitle>{c.title}</S_TypeTitle>
+            <S_TypeContent>
+              <S_ContentWrapper>
+                {c.desc1 ? (
+                  <S_Description>
+                    {c.desc1}
+                    <br />
+                    {c.desc2}
+                  </S_Description>
+                ) : (
+                  <div />
+                )}
+                <S_DateWrapper>
+                  <span>{c.date}</span>
+                  <span>{c.host}</span>
+                </S_DateWrapper>
+              </S_ContentWrapper>
+            </S_TypeContent>
+          </S_Type>
+        ))}
       </S_TypeList>
     </S_Container>
   )
@@ -118,24 +95,11 @@ const S_TypeTitle = styled.div`
   }
 `
 
-const S_TypeEnd = styled.li`
+const S_Type = styled.li<{ isEnd: boolean }>`
   list-style: none;
   border-top: 1px solid ${props => props.theme.colors.tabColor};
-  border-bottom: 1px solid ${props => props.theme.colors.tabColor};
-  display: flex;
-  align-items: center;
-  padding: 16px 0;
-
-  @media ${props => props.theme.device.mobile} {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-`
-
-const S_Type = styled.li`
-  list-style: none;
-  border-top: 1px solid ${props => props.theme.colors.tabColor};
+  border-bottom: ${props =>
+    props.isEnd ? `1px solid ${props.theme.colors.tabColor}` : 'none'};
   display: flex;
   align-items: center;
   padding: 16px 0;

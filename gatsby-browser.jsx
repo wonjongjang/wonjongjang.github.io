@@ -7,9 +7,24 @@
 // You can delete this file if you're not using it
 import 'prismjs/themes/prism-tomorrow.css'
 
-import React from 'react'
-import { RecoilRoot } from 'recoil'
+import React, { useEffect } from 'react'
+import { RecoilRoot, useSetRecoilState } from 'recoil'
+
+import { toggleThemeAtom } from 'etc/atoms'
+
+const ThemeInitializer = () => {
+  const setIsDark = useSetRecoilState(toggleThemeAtom)
+
+  useEffect(() => {
+    setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches)
+  }, [])
+}
 
 export const wrapRootElement = ({ element }) => {
-  return <RecoilRoot>{element}</RecoilRoot>
+  return (
+    <RecoilRoot>
+      <ThemeInitializer />
+      {element}
+    </RecoilRoot>
+  )
 }

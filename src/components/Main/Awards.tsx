@@ -7,43 +7,24 @@ export default function Awards() {
     <S_Container>
       <S_Title>Awards</S_Title>
       <S_TypeList>
-        {AWARDS.map((award, i) =>
-          i < AWARDS.length - 1 ? (
-            <S_Type key={i}>
-              <S_TypeTitle>{award.title}</S_TypeTitle>
-              <S_TypeContent>
-                <S_ContentWrapper>
-                  <span>
-                    {award.desc1}
-                    <br />
-                    {award.desc2}
-                  </span>
-                  <S_DateWrapper>
-                    <span>{award.date}</span>
-                    <span>{award.host}</span>
-                  </S_DateWrapper>
-                </S_ContentWrapper>
-              </S_TypeContent>
-            </S_Type>
-          ) : (
-            <S_TypeEnd key={i}>
-              <S_TypeTitle>{award.title}</S_TypeTitle>
-              <S_TypeContent>
-                <S_ContentWrapper>
-                  <span>
-                    {award.desc1}
-                    <br />
-                    {award.desc2}
-                  </span>
-                  <S_DateWrapper>
-                    <span>{award.date}</span>
-                    <span>{award.host}</span>
-                  </S_DateWrapper>
-                </S_ContentWrapper>
-              </S_TypeContent>
-            </S_TypeEnd>
-          ),
-        )}
+        {AWARDS.map((award, i) => (
+          <S_Type key={i} isEnd={i === AWARDS.length - 1}>
+            <S_TypeTitle>{award.title}</S_TypeTitle>
+            <S_TypeContent>
+              <S_ContentWrapper>
+                <span>
+                  {award.desc1}
+                  <br />
+                  {award.desc2}
+                </span>
+                <S_DateWrapper>
+                  <span>{award.date}</span>
+                  <span>{award.host}</span>
+                </S_DateWrapper>
+              </S_ContentWrapper>
+            </S_TypeContent>
+          </S_Type>
+        ))}
       </S_TypeList>
     </S_Container>
   )
@@ -99,24 +80,11 @@ const S_TypeTitle = styled.div`
   }
 `
 
-const S_TypeEnd = styled.li`
+const S_Type = styled.li<{ isEnd: boolean }>`
   list-style: none;
   border-top: 1px solid ${props => props.theme.colors.tabColor};
-  border-bottom: 1px solid ${props => props.theme.colors.tabColor};
-  display: flex;
-  align-items: center;
-  padding: 16px 0;
-
-  @media ${props => props.theme.device.mobile} {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-`
-
-const S_Type = styled.li`
-  list-style: none;
-  border-top: 1px solid ${props => props.theme.colors.tabColor};
+  border-bottom: ${props =>
+    props.isEnd ? `1px solid ${props.theme.colors.tabColor}` : 'none'};
   display: flex;
   align-items: center;
   padding: 16px 0;

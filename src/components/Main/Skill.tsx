@@ -14,77 +14,37 @@ export default function Skill() {
         <S_Type>
           <S_TypeTitle>Language</S_TypeTitle>
           <S_TypeContent>
-            <S_Icon
-              alt="javascript"
-              src={badgeMaker('javascript-F7DF1E', 'javascript', 'black')}
-            />
-            <S_Icon
-              alt="typescript"
-              src={badgeMaker('typescript-3178C6', 'typescript', 'white')}
-            />
-            <S_Icon
-              alt="python"
-              src={badgeMaker('python-3776AB', 'python', 'white')}
-            />
-            <S_Icon
-              alt="java"
-              src={badgeMaker('java-007396', 'java', 'white')}
-            />
+            {LANGUAGE.map((v, i) => (
+              <S_Icon
+                alt={v.type}
+                src={badgeMaker(v.type + '-' + v.code, v.type, v.color)}
+                key={i}
+              />
+            ))}
           </S_TypeContent>
         </S_Type>
         <S_Type>
           <S_TypeTitle>Library & Framework</S_TypeTitle>
           <S_TypeContent>
-            <S_Icon
-              alt="react"
-              src={badgeMaker('react-61DAFB', 'react', 'black')}
-            />
-            <S_Icon
-              alt="next.js"
-              src={badgeMaker('next.js-000000', 'next.js', 'white')}
-            />
-            <S_Icon
-              alt="gatsby"
-              src={badgeMaker('gatsby-663399', 'gatsby', 'white')}
-            />
-            <S_Icon
-              alt="vue.js"
-              src={badgeMaker('vue.js-4FC08D', 'vue.js', 'white')}
-            />
-            <S_Icon
-              alt="django"
-              src={badgeMaker('django-092E20', 'django', 'white')}
-            />
+            {LibraryAndFramework.map((v, i) => (
+              <S_Icon
+                alt={v.type}
+                src={badgeMaker(v.type + '-' + v.code, v.type, v.color)}
+                key={i}
+              />
+            ))}
           </S_TypeContent>
         </S_Type>
         <S_TypeEnd>
           <S_TypeTitle>Communication</S_TypeTitle>
           <S_TypeContent>
-            <S_Icon alt="git" src={badgeMaker('git-F05032', 'git', 'white')} />
-            <S_Icon
-              alt="jira"
-              src={badgeMaker('jira-0052CC', 'jira', 'white')}
-            />
-            <S_Icon
-              alt="confluence"
-              src={badgeMaker('confluence-172B4D', 'confluence', 'white')}
-            />
-            <S_Icon
-              alt="figma"
-              src={badgeMaker('figma-F24E1E', 'figma', 'white')}
-            />
-            <S_Icon
-              alt="notion"
-              src={badgeMaker('notion-000000', 'notion', 'white')}
-            />
-            <S_Icon
-              alt="slack"
-              src={badgeMaker('slack-4A154B', 'slack', 'white')}
-            />
-            <S_Icon
-              alt="mattermost"
-              src={badgeMaker('mattermost-0058CC', 'mattermost', 'white')}
-            />
+            {COMMUNICATION.map((v, i) => (
+              <S_Icon
+                alt={v.type}
+                src={badgeMaker(v.type + '-' + v.code, v.type, v.color)}
+                key={i}
+              />
+            ))}
           </S_TypeContent>
         </S_TypeEnd>
       </S_TypeList>
@@ -158,3 +118,92 @@ const S_Title = styled.p`
 const S_Container = styled.div`
   margin-top: 80px;
 `
+
+const LANGUAGE = [
+  {
+    type: 'javascript',
+    code: 'F7DF1E',
+    color: 'black',
+  },
+  {
+    type: 'typescript',
+    code: '3178C6',
+    color: 'white',
+  },
+  {
+    type: 'python',
+    code: '3776AB',
+    color: 'white',
+  },
+  {
+    type: 'java',
+    code: '007396',
+    color: 'white',
+  },
+]
+
+const LibraryAndFramework = [
+  {
+    type: 'react',
+    code: '61DAFB',
+    color: 'black',
+  },
+  {
+    type: 'next.js',
+    code: '000000',
+    color: 'white',
+  },
+  {
+    type: 'gatsby',
+    code: '663399',
+    color: 'white',
+  },
+  {
+    type: 'vue.js',
+    code: '4FC08D',
+    color: 'white',
+  },
+  {
+    type: 'django',
+    code: '092E20',
+    color: 'white',
+  },
+]
+
+const COMMUNICATION = [
+  {
+    type: 'git',
+    code: 'F05032',
+    color: 'white',
+  },
+  {
+    type: 'jira',
+    code: '0052CC',
+    color: 'white',
+  },
+  {
+    type: 'confluence',
+    code: '172B4D',
+    color: 'white',
+  },
+  {
+    type: 'figma',
+    code: 'F24E1E',
+    color: 'white',
+  },
+  {
+    type: 'notion',
+    code: '000000',
+    color: 'white',
+  },
+  {
+    type: 'slack',
+    code: '4A154B',
+    color: 'white',
+  },
+  {
+    type: 'mattermost',
+    code: '0058CC',
+    color: 'white',
+  },
+]

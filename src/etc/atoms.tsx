@@ -1,16 +1,9 @@
-import { atom, selector } from 'recoil'
+import { atom } from 'recoil'
 
 // Theme
-const themeSelector = selector({
-  key: 'themeSelector',
-  get: () =>
-    typeof window !== 'undefined'
-      ? window.matchMedia('(prefers-color-scheme: dark)').matches
-      : false,
-})
 export const toggleThemeAtom = atom({
   key: 'theme',
-  default: themeSelector,
+  default: false,
 })
 
 // Sidebar

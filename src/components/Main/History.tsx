@@ -7,33 +7,19 @@ export default function History() {
     <S_Container>
       <S_Title>History</S_Title>
       <S_TypeList>
-        {HISTORY.map((h, i) =>
-          i < HISTORY.length - 1 ? (
-            <S_Type key={i}>
-              <S_TypeTitle>{h.co}</S_TypeTitle>
-              <S_TypeContent>
-                <S_ContentWrapper>
-                  {h.job ? <S_Description>{h.job}</S_Description> : <div />}
-                  <S_DateWrapper>
-                    <span>{h.date}</span>
-                  </S_DateWrapper>
-                </S_ContentWrapper>
-              </S_TypeContent>
-            </S_Type>
-          ) : (
-            <S_TypeEnd key={i}>
-              <S_TypeTitle>{h.co}</S_TypeTitle>
-              <S_TypeContent>
-                <S_ContentWrapper>
-                  {h.job ? <S_Description>{h.job}</S_Description> : <div />}
-                  <S_DateWrapper>
-                    <span>{h.date}</span>
-                  </S_DateWrapper>
-                </S_ContentWrapper>
-              </S_TypeContent>
-            </S_TypeEnd>
-          ),
-        )}
+        {HISTORY.map((h, i) => (
+          <S_Type key={i} isEnd={i === HISTORY.length - 1}>
+            <S_TypeTitle>{h.co}</S_TypeTitle>
+            <S_TypeContent>
+              <S_ContentWrapper>
+                {h.job ? <S_Description>{h.job}</S_Description> : <div />}
+                <S_DateWrapper>
+                  <span>{h.date}</span>
+                </S_DateWrapper>
+              </S_ContentWrapper>
+            </S_TypeContent>
+          </S_Type>
+        ))}
       </S_TypeList>
     </S_Container>
   )
@@ -100,24 +86,11 @@ const S_TypeTitle = styled.div`
   }
 `
 
-const S_TypeEnd = styled.li`
+const S_Type = styled.li<{ isEnd: boolean }>`
   list-style: none;
   border-top: 1px solid ${props => props.theme.colors.tabColor};
-  border-bottom: 1px solid ${props => props.theme.colors.tabColor};
-  display: flex;
-  align-items: center;
-  padding: 16px 0;
-
-  @media ${props => props.theme.device.mobile} {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-`
-
-const S_Type = styled.li`
-  list-style: none;
-  border-top: 1px solid ${props => props.theme.colors.tabColor};
+  border-bottom: ${props =>
+    props.isEnd ? `1px solid ${props.theme.colors.tabColor}` : 'none'};
   display: flex;
   align-items: center;
   padding: 16px 0;
