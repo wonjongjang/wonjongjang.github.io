@@ -8,7 +8,7 @@ import CommentWidget from 'components/Comment/index'
 
 import { I_PostItem } from 'etc/types'
 
-interface PostTemplateProps {
+interface I_PostTemplate {
   location: {
     href: string
   }
@@ -24,7 +24,7 @@ export default function PostTemplate({
   data: {
     allMarkdownRemark: { edges },
   },
-}: PostTemplateProps) {
+}: I_PostTemplate) {
   const {
     node: {
       frontmatter: { title, page, date, categories, subTitle },

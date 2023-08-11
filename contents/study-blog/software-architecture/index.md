@@ -1,5 +1,5 @@
 ---
-page: 'tech-blog'
+page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-03-02'
 title: '소프트웨어 아키텍처'

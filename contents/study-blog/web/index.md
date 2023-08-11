@@ -1,5 +1,5 @@
 ---
-page: 'tech-blog'
+page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-02-21'
 title: '웹(Web)'

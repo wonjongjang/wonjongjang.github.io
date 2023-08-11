@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 
@@ -9,37 +9,48 @@ import { toggleSidebarAtom, toggleThemeAtom } from 'etc/atoms'
 export default function Header() {
   const [isDark, setIsDark] = useRecoilState(toggleThemeAtom)
   const setIsSidebar = useSetRecoilState(toggleSidebarAtom)
+  const [isBorder, setIsBorder] = useState(false)
+
+  useEffect(() => {
+    const topElement = document.createElement('div')
+    document.body.prepend(topElement)
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsBorder(false)
+        } else {
+          setIsBorder(true)
+        }
+      })
+    })
+
+    observer.observe(topElement)
+
+    return () => {
+      observer.disconnect()
+    }
+  })
 
   return (
-    <S_HeaderContainer>
+    <S_HeaderContainer isBorder={isBorder}>
       <S_HeaderContainerList>
         <Link to="/">
           <S_Home>won</S_Home>
         </Link>
         <S_MenuList>
-          <Link
-            to="/project"
-            activeStyle={{ color: '#00a8ff' }}
-            partiallyActive={true}
-          >
-            <S_Menu>Project</S_Menu>
-          </Link>
-          <Link
-            to="/tech-blog"
-            activeStyle={{ color: '#00a8ff' }}
-            partiallyActive={true}
-          >
-            <S_Menu>Tech Blog</S_Menu>
-          </Link>
-          {/* <Link
-            to="/blog"
-            activeStyle={{ color: '#00a8ff' }}
-            partiallyActive={true}
-          >
-            <S_Menu>Blog</S_Menu>
-          </Link> */}
+          {MENU.map((v, i) => (
+            <Link
+              to={v.link}
+              activeStyle={{ color: '#00a8ff' }}
+              partiallyActive={true}
+              key={i}
+            >
+              <S_Menu>{v.title}</S_Menu>
+            </Link>
+          ))}
         </S_MenuList>
-        <S_S_IconList>
+        <S_IconList>
           <S_Icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +109,7 @@ export default function Header() {
               />
             </svg>
           </S_SidebarIcon>
-        </S_S_IconList>
+        </S_IconList>
       </S_HeaderContainerList>
     </S_HeaderContainer>
   )
@@ -136,13 +147,14 @@ const S_Icon = styled.li`
   }
 `
 
-const S_S_IconList = styled.ul`
+const S_IconList = styled.ul`
   display: flex;
   align-items: center;
   gap: 10px;
 `
 
-const S_Menu = styled.span`
+const S_Menu = styled.li`
+  list-style: none;
   line-height: 72px;
   font-weight: 700;
   padding: 0 28px;
@@ -180,16 +192,16 @@ const S_Home = styled.span`
 
 const S_HeaderContainerList = styled.div`
   max-width: 1296px;
-  height: 60px;
+  height: 72px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 
   @media ${props => props.theme.device.laptop} {
-    height: 72px;
     max-width: 952px;
   }
   @media ${props => props.theme.device.tablet} {
+    height: 60px;
     max-width: 630px;
   }
   @media ${props => props.theme.device.mobile} {
@@ -198,10 +210,23 @@ const S_HeaderContainerList = styled.div`
   }
 `
 
-const S_HeaderContainer = styled.header`
+const S_HeaderContainer = styled.header<{ isBorder: boolean }>`
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 2000;
   background-color: ${props => props.theme.colors.bgColor};
+  border-bottom: ${props =>
+    props.isBorder ? `1px solid ${props.theme.colors.tabColor}` : 'none'};
 `
+
+const MENU = [
+  {
+    title: 'Project',
+    link: '/project',
+  },
+  {
+    title: 'Study Blog',
+    link: '/study-blog',
+  },
+]

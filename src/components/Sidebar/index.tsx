@@ -34,8 +34,10 @@ export default function Sidebar() {
         <Link to="/project">
           <S_Menu onClick={() => setIsSidebar(prev => !prev)}>Project</S_Menu>
         </Link>
-        <Link to="/tech-blog">
-          <S_Menu onClick={() => setIsSidebar(prev => !prev)}>Tech Blog</S_Menu>
+        <Link to="/study-blog">
+          <S_Menu onClick={() => setIsSidebar(prev => !prev)}>
+            Study Blog
+          </S_Menu>
         </Link>
       </S_MenuList>
     </S_Container>

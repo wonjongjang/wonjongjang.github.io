@@ -1,5 +1,5 @@
 ---
-page: 'tech-blog'
+page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-03-01'
 title: '사용자 경험(UX)'

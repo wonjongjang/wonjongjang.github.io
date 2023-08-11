@@ -1,5 +1,5 @@
 ---
-page: 'tech-blog'
+page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-03-04'
 title: '객체지향'

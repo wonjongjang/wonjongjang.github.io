@@ -13,7 +13,7 @@ import Layout from 'components/Layout'
 import CategoryList from 'components/CategoryList'
 import BlogList from 'components/Blog/BlogList'
 
-interface I_TechBlog {
+interface I_StudyBlog {
   location: {
     pathname: string
     search: string
@@ -26,24 +26,24 @@ interface I_TechBlog {
   }
 }
 
-export default function TechBlog({
+export default function StudyBlog({
   location: { pathname, search, href },
   data: {
     allMarkdownRemark: { edges },
   },
-}: I_TechBlog) {
+}: I_StudyBlog) {
   const parsed: ParsedQuery<string> = queryString.parse(search)
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
       : parsed.category
 
-  // tech-blog에 해당하는 게시물
+  // study-blog에 해당하는 게시물
   const pageEdges = edges.filter(
-    edge => edge.node.frontmatter.page === 'tech-blog',
+    edge => edge.node.frontmatter.page === 'study-blog',
   )
 
-  // tech-blog에 해당하는 게시물 중 카테고리 별 개수
+  // study-blog에 해당하는 게시물 중 카테고리 별 개수
   const categoryList = useMemo(
     () =>
       pageEdges.reduce(
@@ -70,9 +70,9 @@ export default function TechBlog({
   )
 
   return (
-    <Layout title="Tech Blog" description="개발하면서 남긴 기록" url={href}>
+    <Layout title="Study Blog" description="개발하면서 남긴 기록" url={href}>
       <S_FadeInAnimation>
-        <S_PageTitle>Tech Blog</S_PageTitle>
+        <S_PageTitle>Study Blog</S_PageTitle>
         <S_PageDescript>공부하면서 남긴 기록</S_PageDescript>
       </S_FadeInAnimation>
       <S_Section>

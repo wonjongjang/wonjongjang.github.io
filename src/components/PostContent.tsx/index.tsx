@@ -44,7 +44,7 @@ export default function PostContent({ html, categories, page }: I_PostContent) {
             </S_CategoryList>
           </S_CategoryContainer>
 
-          <S_Prev to={`/tech-blog`}>목록 보기</S_Prev>
+          <S_Prev to={`/study-blog`}>목록 보기</S_Prev>
         </>
       )}
     </>

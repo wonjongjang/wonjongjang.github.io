@@ -1,5 +1,5 @@
 ---
-page: 'tech-blog'
+page: 'study-blog'
 categories: ['React-Native']
 date: '2023-01-24'
 title: 'React Native란?'

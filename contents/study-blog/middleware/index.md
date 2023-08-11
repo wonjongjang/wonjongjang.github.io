@@ -1,9 +1,9 @@
 ---
-page: 'tech-blog'
+page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-04-10'
 title: '미들웨어(Middleware)'
-summary: '미들웨어의 개념, 특징, 종류'
+summary: '미들웨어(Middleware)의 개념, 특징, 종류'
 ---
 
 # 미들웨어(Middleware)

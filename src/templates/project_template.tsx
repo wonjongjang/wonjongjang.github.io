@@ -7,7 +7,7 @@ import PostContent from 'components/PostContent.tsx'
 
 import { I_PostItem } from 'etc/types'
 
-interface ProjectTemplateProps {
+interface I_ProjectTemplate {
   location: {
     href: string
   }
@@ -23,7 +23,7 @@ export default function ProjectTemplate({
   data: {
     allMarkdownRemark: { edges },
   },
-}: ProjectTemplateProps) {
+}: I_ProjectTemplate) {
   const {
     node: {
       frontmatter: {

@@ -1,5 +1,5 @@
 ---
-page: 'tech-blog'
+page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-02-13'
 title: '소프트웨어 생명 주기'
@@ -37,6 +37,7 @@ summary: '소프트웨어 생명 주기 정의 및 모형(폭포수, 프로토�
 사용자의 요구사항을 정확히 파악하기 위해 프로토타입을 만들어 최종 결과물을 예측
 
 - 특징
+
   - 원형 모형
 
 - 장점
@@ -72,4 +73,3 @@ summary: '소프트웨어 생명 주기 정의 및 모형(폭포수, 프로토�
   - 기능 중심 개발(FDD; Feature Driven Development)
   - DSDM(Dynamic System Development Method)
   - DAD(Disciplined Agile Delivery)
-
