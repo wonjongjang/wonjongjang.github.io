@@ -60,7 +60,7 @@ export const getPostList = graphql`
   }
 `
 
-export const S_Section = styled.div`
+export const S_Section = styled.section`
   margin-top: 72px;
 
   @media ${props => props.theme.device.tablet} {

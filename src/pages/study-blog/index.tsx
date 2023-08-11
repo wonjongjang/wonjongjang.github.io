@@ -27,7 +27,7 @@ interface I_StudyBlog {
 }
 
 export default function StudyBlog({
-  location: { pathname, search, href },
+  location: { search, href },
   data: {
     allMarkdownRemark: { edges },
   },

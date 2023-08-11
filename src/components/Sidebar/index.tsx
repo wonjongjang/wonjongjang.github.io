@@ -11,7 +11,7 @@ export default function Sidebar() {
 
   return (
     <S_Container isSidebar={isSidebar}>
-      <S_CloseIcon onClick={() => setIsSidebar(prev => !prev)}>
+      <S_CloseIcon onClick={() => setIsSidebar(false)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -28,17 +28,13 @@ export default function Sidebar() {
       </S_CloseIcon>
       {/* <Profile /> */}
       <S_MenuList>
-        <Link to="/">
-          <S_Menu onClick={() => setIsSidebar(prev => !prev)}>Home</S_Menu>
-        </Link>
-        <Link to="/project">
-          <S_Menu onClick={() => setIsSidebar(prev => !prev)}>Project</S_Menu>
-        </Link>
-        <Link to="/study-blog">
-          <S_Menu onClick={() => setIsSidebar(prev => !prev)}>
-            Study Blog
-          </S_Menu>
-        </Link>
+        {MENU.map((v, i) => (
+          <Link to={v.link} key={i}>
+            <S_Menu onClick={() => setIsSidebar(prev => !prev)}>
+              {v.title}
+            </S_Menu>
+          </Link>
+        ))}
       </S_MenuList>
     </S_Container>
   )
@@ -88,3 +84,18 @@ const S_Container = styled.div<{ isSidebar: Boolean }>`
   transition: all 0.4s;
   z-index: 3000;
 `
+
+const MENU = [
+  {
+    title: 'Home',
+    link: '/',
+  },
+  {
+    title: 'Project',
+    link: '/project',
+  },
+  {
+    title: 'Study Blog',
+    link: '/study-blog',
+  },
+]
