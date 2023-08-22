@@ -24,17 +24,20 @@ React에 대한 사전 지식이 있다면 쉽게 입문 가능
 
 # How?
 
-## 테스트 / 프로토타입
+## 모바일 개발을 처음 접하는 경우
+
+> 테스트 / 프로토타입
 
 - Expo
 
-## 출시
+## 모바일 개발에 익숙한 경우
 
-- Android
+> 출시
 
-  - Android Studio
-  - Java
-  - Android SDK
-
-- iOS
-  - Xcode
+- React Native CLI
+  - Android
+    - Android Studio
+    - Java
+    - Android SDK
+  - iOS
+    - Xcode
