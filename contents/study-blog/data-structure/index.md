@@ -3,7 +3,7 @@ page: 'study-blog'
 categories: ['Software-Development']
 date: '2023-04-11'
 title: '자료 구조'
-summary: '자료 구조(Data structure)의 정의, 분류'
+summary: '자료 구조(Data structure)의 정의, 분류(배열, 선형 리스트, 스택, 큐, 트리, 그래프)'
 ---
 
 # 자료 구조(Data structure)
@@ -74,3 +74,33 @@ summary: '자료 구조(Data structure)의 정의, 분류'
   - 방향 그래프
   
   - 무방향 그래프
+
+## 트리(Tree)
+
+정점(Node)과 간선(Edge)으로 구성
+
+사이클이 없는 그래프
+
+- 용어
+  
+  - 노드(Node) : 트리의 기본 요소
+    
+    - 근 노드(Root Node) : 트리의 맨 위에 있는 노드
+    
+    - 단말 노드(Terminal Node) = 잎 노드(Leaf Node) : 자식이 없는 노드
+    
+    - 자식 노드(Son Node) : 어떤 노드에 연결된 다음 레벨의 노드
+    
+    - 부모 노드(Parent Node) : 어떤 노드에 연결된 이전 레벨의 노드
+    
+    - 형제 노드(Brother Node) : 동일한 부모를 갖는 노드
+  
+  - 간선(Edge) : 노드를 연결하는 선
+  
+  - 차수(Degree) : 각 노드에서 뻗어 나온 가지의 수
+    
+    - 트리의 차수 : 트리에 있는 노드의 차수 중에서 가장 큰 값
+  
+  - 높이 : 노드의 레벨 (보통 레벨 0부터 시작, 레벨 1부터 하는 경우 존재)
+    
+    - 트리의 높이 : 트리에 있는 노드의 높이 중에서 가장 큰 값
