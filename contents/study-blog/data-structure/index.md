@@ -3,7 +3,7 @@ page: 'study-blog'
 categories: ['Software-Development']
 date: '2023-04-11'
 title: '자료 구조'
-summary: '자료 구조(Data structure)의 정의, 분류(배열, 선형 리스트, 스택, 큐, 트리, 그래프)'
+summary: '자료 구조(Data structure)의 정의, 분류'
 ---
 
 # 자료 구조(Data structure)
