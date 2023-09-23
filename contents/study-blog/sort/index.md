@@ -1,9 +1,9 @@
 ---
 page: 'study-blog'
 categories: ['Software-Development']
-date: '2023-04-11'
+date: '2023-04-12'
 title: '정렬(Sort)'
-summary: '정렬(Sort)의 정종류'
+summary: '정렬(Sort)의 정의, 종류'
 ---
 
 # 정렬(Sort)
