@@ -6,11 +6,9 @@ title: '검색(Search)'
 summary: '검색(Search)의 정의, 종류'
 ---
 
-# 검색(Search)
-
 저장되어 있는 자료 중에서 원하는 항목을 찾는 작업
 
-## 순차 검색(Sequential Search)
+# 순차 검색(Sequential Search)
 
 일렬로 되어 있는 자료를 순서대로 검색하는 방법
 
@@ -45,7 +43,7 @@ for i in range(len(arr)):
         break
 ```
 
-## 이분 검색(Binary Search) = 이진 검색
+# 이분 검색(Binary Search) = 이진 검색
 
 자료의 가운데 항목의 키 값과 비교하여 다음 검색의 위치를 결정하고 검색을 계속하는 방법
 
@@ -97,6 +95,6 @@ right = len(arr) - 1
 recur(arr, left, right, key)
 ```
 
-## 해싱(Hashing)
+# 해싱(Hashing)
 
 해시 테이블(Hash Table)이라는 기억공간을 할당하고, 해시 함수(Hash Function)를 이용하여 레코드 키에 대한 해시 테이블 내의 홈 주소를 계산한 후 주어진 레코드를 해당 기억장소에 저장/검색 작업을 수행하는 방식

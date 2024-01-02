@@ -6,8 +6,6 @@ title: '정렬(Sort)'
 summary: '정렬(Sort)의 정의, 종류'
 ---
 
-# 정렬(Sort)
-
 2개 이상의 자료를 특정 기준에 의해 오름차순/내림차순으로 재배열하는 것
 
 | 알고리즘   | 평균 수행시간        | 최악 수행시간        | 알고리즘 기법 |
@@ -22,7 +20,7 @@ summary: '정렬(Sort)의 정의, 종류'
 | 병합 정렬  | $O(n log_2 n)$ | $O(n log_2 n)$ | 분할 정복   |
 | 기수 정렬  | $O(dn)$        | $O(dn)$        | Queue   |
 
-## 버블 정렬(Bubble Sort)
+# 버블 정렬(Bubble Sort)
 
 인접한 두 개의 요소를 비교하여 위치를 서로 교환하는 방식
 
@@ -40,7 +38,7 @@ for i in range(len(arr)-1, 0, -1):	# 범위의 끝 위치
             arr[j], arr[j+1] = arr[j+1], arr[j]
 ```
 
-## 카운팅 정렬(Counting Sort)
+# 카운팅 정렬(Counting Sort)
 
 각 요소가 몇 개씩 있는지 세는 방식
 
@@ -66,7 +64,7 @@ for k in range(len(ans)-1, -1, -1):
     count[arr[k]] -= 1
 ```
 
-## 선택 정렬(Selection Sort)
+# 선택 정렬(Selection Sort)
 
 요소 중 최소값을 찾아 앞에서 부터 놓는 방식
 
@@ -84,7 +82,7 @@ for i in range(len(arr)-1):
 arr[k-1]
 ```
 
-## 퀵 정렬(Quick Sort)
+# 퀵 정렬(Quick Sort)
 
 키를 기준으로 작은 값은 왼쪽, 큰 값은 오른쪽으로 분해시키는 방식
 
@@ -94,11 +92,11 @@ arr[k-1]
   
   - 정복(Conquer) : 피봇(Pivot)을 기준으로 작은 값은 왼쪽, 큰 값은 오른쪽으로 정렬
 
-## 삽입 정렬(Insertion Sort)
+# 삽입 정렬(Insertion Sort)
 
 n번째 요소를 n-1번째 요소와 비교하여 알맞은 순서에 삽입한 후 나머지를 뒤로 이동시키는 방식
 
-## 쉘 정렬(Shell Sort)
+# 쉘 정렬(Shell Sort)
 
 삽입 정렬을 확장한 개념
 
@@ -106,14 +104,14 @@ n번째 요소를 n-1번째 요소와 비교하여 알맞은 순서에 삽입한
 
 보통 $h = \sqrt[3]{n}$
 
-## 힙 정렬(Heap Sort)
+# 힙 정렬(Heap Sort)
 
 전이진 트리(Complete Binary Tree)를 이용한 방식
 
-## 병합 정렬(Merge Sort) = 2-Way 합병 정렬
+# 병합 정렬(Merge Sort) = 2-Way 합병 정렬
 
 두 개를 하나로 합병하는 방식
 
-## 기수 정렬(Radix Sort) = Bucket Sort
+# 기수 정렬(Radix Sort) = Bucket Sort
 
 Queue를 활용하여 자릿수 별로 정렬하는 방식

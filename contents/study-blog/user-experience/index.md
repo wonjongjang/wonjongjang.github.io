@@ -2,11 +2,9 @@
 page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-03-01'
-title: '사용자 경험(UX)'
+title: '사용자 경험(UX, User Experience)'
 summary: '사용자 경험(UX)의 개념, 특징'
 ---
-
-# 사용자 경험(UX, User Experience)
 
 사용자가 시스템/서비스를 이용하면서 느끼고 생각하게 되는 총제적인 경험
 

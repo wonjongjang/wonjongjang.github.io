@@ -29,7 +29,7 @@ export default function Skill() {
             {LibraryAndFramework.map((v, i) => (
               <S_Icon
                 alt={v.type}
-                src={badgeMaker(v.type + '-' + v.code, v.type, v.color)}
+                src={badgeMaker(  v.title + '-' + v.code, v.type, v.color)}
                 key={i}
               />
             ))}
@@ -144,26 +144,37 @@ const LANGUAGE = [
 
 const LibraryAndFramework = [
   {
+    title: 'react',
     type: 'react',
     code: '61DAFB',
     color: 'black',
   },
   {
+    title: 'react native',
+    type: 'react',
+    code: '61DAFB',
+    color: 'black',
+  },
+  {
+    title: 'next.js',
     type: 'next.js',
     code: '000000',
     color: 'white',
   },
   {
+    title: 'gatsby',
     type: 'gatsby',
     code: '663399',
     color: 'white',
   },
   {
+    title: 'vue.js',
     type: 'vue.js',
     code: '4FC08D',
     color: 'white',
   },
   {
+    title: 'django',
     type: 'django',
     code: '092E20',
     color: 'white',

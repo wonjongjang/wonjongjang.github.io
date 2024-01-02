@@ -2,19 +2,17 @@
 page: 'study-blog'
 categories: ['Software-Design']
 date: '2023-03-02'
-title: '소프트웨어 아키텍처'
+title: '소프트웨어 아키텍처(Software Architecture)'
 summary: '소프트웨어 아키텍처의 개념, 기본 원리'
 ---
-
-# 소프트웨어 아키텍처(Software Architecture)
 
 소프트웨어의 골격이 되는 기본 구조
 
 소프트웨어를 구성하는 요소들 간의 관계를 표현하는 시스템의 구조/구조체
 
-## 기본 원리
+# 기본 원리
 
-### 모듈화(Modularity)
+## 모듈화(Modularity)
 
 시스템의 기능을 모듈 단위로 나누는 것
 
@@ -24,7 +22,7 @@ summary: '소프트웨어 아키텍처의 개념, 기본 원리'
   - 효율적인 관리
   - 오류의 파급 효과 최소화
 
-### 추상화(Abstraction)
+## 추상화(Abstraction)
 
 문제의 전체적이고 포괄적인 개념을 설계한 후 차례로 세분화하여 구체화시켜 나가는 것
 
@@ -33,13 +31,13 @@ summary: '소프트웨어 아키텍처의 개념, 기본 원리'
   - 최소의 비용으로 실제 상황에 대처 가능
   - 시스템의 구조 및 구성을 대략적으로 파악 가능
 
-### 단계적 분해(Stepwise Refinement)
+## 단계적 분해(Stepwise Refinement)
 
 하향식 설계 전략
 
 문제를 상위의 중요 개념으로부터 하위의 개념으로 구체화시키는 분할 기법
 
-### 정보 은닉(Information Hiding)
+## 정보 은닉(Information Hiding)
 
 한 모듈 내부에 포함된 절차와 자료들의 정보가 감추어져 다른 모듈이 접근/변경하지 못하도록 하는 기법
 
