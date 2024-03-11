@@ -1,8 +1,8 @@
 ---
 page: 'study-blog'
 categories: ['JavaScript']
-date: '2022-08-21'
-title: '변수 키워드 (var, let, const)'
+date: '2022-08-02'
+title: '변수 키워드 - var, let, const'
 summary: 'JavaScript의 변수 키워드인 var, let, const 차이'
 ---
 

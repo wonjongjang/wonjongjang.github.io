@@ -1,7 +1,7 @@
 ---
 page: 'study-blog'
 categories: ['JavaScript']
-date: '2022-08-19'
+date: '2022-08-01'
 title: 'JavaScript란?'
 summary: 'JavaScript가 무엇인지, 왜 사용하는지, 시작 방법 설명'
 ---

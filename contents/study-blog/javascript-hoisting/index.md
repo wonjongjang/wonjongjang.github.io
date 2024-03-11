@@ -1,7 +1,7 @@
 ---
 page: 'study-blog'
 categories: ['JavaScript']
-date: '2022-08-22'
+date: '2022-08-03'
 title: '변수 생성 단계 및 호이스팅(Variable Hoisting)'
 summary: 'JavaScript의 변수 생성 단계 및 호이스팅'
 ---
