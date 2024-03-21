@@ -3,7 +3,7 @@ page: 'study-blog'
 categories: ['JavaScript']
 date: '2022-08-07'
 title: '함수(Function)'
-summary: 'JavaScript 함수의 정의 방식, 호이스팅, 일급 객체, 매개변수/인수'
+summary: 'JavaScript 함수의 정의 방식, 호이스팅, 일급 객체, 매개변수/인수, this'
 ---
 
 어떤 작업을 수행하기 위해 필요한 문(statement)들의 집합을 정의한 코드 블록
@@ -12,7 +12,11 @@ summary: 'JavaScript 함수의 정의 방식, 호이스팅, 일급 객체, 매�
 
 일급 객체(First-class object)
 
-> - 일급 객체 특징
+> **일급 객체(First-class object)**
+> 
+> 프로그래밍 언어의 기본적 조작을 제한없이 사용할 수 있는 대상
+> 
+> - 특징
 >   
 >   - 무명의 리터럴로 표현 가능
 >   
@@ -73,8 +77,9 @@ summary: 'JavaScript 함수의 정의 방식, 호이스팅, 일급 객체, 매�
   
   ```js
   new Function(arg1, arg2, ... argN, functionBody)
+  ```
   
-  
+  ```js
   const square = new Function('number', 'return number * number');
   console.log(square(10)); // 100
   ```
@@ -86,12 +91,70 @@ summary: 'JavaScript 함수의 정의 방식, 호이스팅, 일급 객체, 매�
 # 매개변수(Parameter)와 인수(Argument)
 
 ```js
-const square = function (p1, p2) { // 매개변수 p1, p2에 받은 인수 할당
-  console.log(p1, p2); // 1 undefined
+const square = function (p1, p2) { // 매개변수 p1, p2에 전달 받은 인수 할당
+    console.log(p1, p2); // 1 undefined
+
+    // 함수는 호출될 때 매개변수 외에 arguments 객체와 this를 암묵적으로 전달 받음
+    console.log(arguments);
+    console.log(this);
 };
 
 square(1); // 함수에 인수 1 전달
 ```
+
+# this
+
+> - Java의 this
+>   
+>   - 인스턴스 자신(self)을 가리키는 참조변수
+>   
+>   - 주로 매개변수와 멤버변수 이름이 같을 경우 구분하기 위해 사용
+>   
+>   ```java
+>   public Class Person {
+>   
+>     private String name;    // 멤버변수
+>   
+>     public Person(String name) {    // 매개변수
+>       this.name = name;    // 멤버변수 name = 매개변수 name
+>     }
+>   }
+>   ```
+
+자바스크립트의 this는 함수 호출 방식에 따라 this에 바인딩할 어떤 객체가 동적으로 결정
+
+- 함수 호출 방식
+  
+  - 함수 호출
+  
+  - 메소드 호출
+  
+  - 생성자 함수 호출
+  
+  - apply/call/bind 호출
+  
+  ```js
+  const foo = function () {
+    console.dir(this);
+  };
+  
+  // 함수 호출
+  foo(); // window
+  // window.foo();
+  
+  // 메소드 호출
+  const obj = { foo: foo };
+  obj.foo(); // obj
+  
+  // 생성자 함수 호출
+  const instance = new foo(); // instance
+  
+  // apply/call/bind 호출
+  const bar = { name: 'bar' };
+  foo.call(bar);   // bar
+  foo.apply(bar);  // bar
+  foo.bind(bar)(); // bar
+  ```
 
 # 참고
 
