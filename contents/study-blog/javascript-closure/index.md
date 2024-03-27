@@ -41,3 +41,5 @@ summary: 'JavaScript 클로저'
 # 참고
 
 - [PoiemaWeb](https://poiemaweb.com/js-prototype#42-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%EA%B0%9D%EC%B2%B4%EC%9D%98-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EC%B2%B4%EC%9D%B8)
+
+- [JavaScript Visualizer](https://ui.dev/javascript-visualizer)
