@@ -117,9 +117,11 @@ data-styled.g46[id="PostContenttsx__S_ContentContainer-sc-1ltus3d-5"]{content:"g
 <p>여러번 호출 가능 → 코드의 재사용</p>
 <p>일급 객체(First-class object)</p>
 <blockquote>
+<p><strong>일급 객체(First-class object)</strong></p>
+<p>프로그래밍 언어의 기본적 조작을 제한없이 사용할 수 있는 대상</p>
 <ul>
 <li>
-<p>일급 객체 특징</p>
+<p>특징</p>
 <ul>
 <li>
 <p>무명의 리터럴로 표현 가능</p>
@@ -176,10 +178,8 @@ data-styled.g46[id="PostContenttsx__S_ContentContainer-sc-1ltus3d-5"]{content:"g
 <p>Function 생성자 함수</p>
 <p>함수 선언문/표현식 모두 Function 생성자 함수의 축약법(short-hand)</p>
 <p>일반적으로 사용 X</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> <span class="token operator">...</span> argN<span class="token punctuation">,</span> functionBody<span class="token punctuation">)</span>
-
-
-<span class="token keyword">const</span> square <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'number'</span><span class="token punctuation">,</span> <span class="token string">'return number * number'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> <span class="token operator">...</span> argN<span class="token punctuation">,</span> functionBody<span class="token punctuation">)</span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> square <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'number'</span><span class="token punctuation">,</span> <span class="token string">'return number * number'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">square</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 100</span></code></pre></div>
 </li>
 </ul>
@@ -188,11 +188,79 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p><strong>변수 객체(VO, Variable Object)</strong></p>
 </blockquote>
 <h1>매개변수(Parameter)와 인수(Argument)</h1>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">square</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">p1<span class="token punctuation">,</span> p2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 매개변수 p1, p2에 받은 인수 할당</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 undefined</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">square</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">p1<span class="token punctuation">,</span> p2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 매개변수 p1, p2에 전달 받은 인수 할당</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 undefined</span>
+
+    <span class="token comment">// 함수는 호출될 때 매개변수 외에 arguments 객체와 this를 암묵적으로 전달 받음</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token function">square</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 함수에 인수 1 전달</span></code></pre></div>
+<h1>this</h1>
+<blockquote>
+<ul>
+<li>
+<p>Java의 this</p>
+<ul>
+<li>
+<p>인스턴스 자신(self)을 가리키는 참조변수</p>
+</li>
+<li>
+<p>주로 매개변수와 멤버변수 이름이 같을 경우 구분하기 위해 사용</p>
+</li>
+</ul>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>    <span class="token comment">// 멤버변수</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment">// 매개변수</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>    <span class="token comment">// 멤버변수 name = 매개변수 name</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+</li>
+</ul>
+</blockquote>
+<p>자바스크립트의 this는 함수 호출 방식에 따라 this에 바인딩할 어떤 객체가 동적으로 결정</p>
+<ul>
+<li>
+<p>함수 호출 방식</p>
+<ul>
+<li>
+<p>함수 호출</p>
+</li>
+<li>
+<p>메소드 호출</p>
+</li>
+<li>
+<p>생성자 함수 호출</p>
+</li>
+<li>
+<p>apply/call/bind 호출</p>
+</li>
+</ul>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 함수 호출</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// window</span>
+<span class="token comment">// window.foo();</span>
+
+<span class="token comment">// 메소드 호출</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">foo</span><span class="token operator">:</span> foo <span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// obj</span>
+
+<span class="token comment">// 생성자 함수 호출</span>
+<span class="token keyword">const</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// instance</span>
+
+<span class="token comment">// apply/call/bind 호출</span>
+<span class="token keyword">const</span> bar <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'bar'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">foo</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// bar</span>
+<span class="token function">foo</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// bar</span>
+<span class="token function">foo</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// bar</span></code></pre></div>
+</li>
+</ul>
 <h1>참고</h1>
 <ul>
 <li><a href="https://poiemaweb.com/" target="_blank" rel="nofollow">PoiemaWeb</a></li>
