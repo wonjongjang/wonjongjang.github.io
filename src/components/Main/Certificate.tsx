@@ -128,6 +128,13 @@ const S_Container = styled.div`
 
 const CERTIFICATE = [
   {
+    title: '정보처리기사',
+    desc1: '',
+    desc2: '',
+    date: '2024.06.18',
+    host: '한국산업인력공단',
+  },
+  {
     title: '6시그마(GB)',
     desc1: '',
     desc2: '',
