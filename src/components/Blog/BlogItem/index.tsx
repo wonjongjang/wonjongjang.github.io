@@ -26,7 +26,7 @@ export default function BlogItem({
         ))}
       </S_CategoryList>
       <S_Title>{title}</S_Title>
-      <S_Date>{date}</S_Date>
+      {/* <S_Date>{date}</S_Date> */}
     </S_Container>
   )
 }

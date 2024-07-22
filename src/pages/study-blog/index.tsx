@@ -91,9 +91,7 @@ export default function StudyBlog({
 
 export const getBlogList = graphql`
   query getPostList {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
-    ) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___order] }) {
       edges {
         node {
           id
@@ -105,6 +103,7 @@ export const getBlogList = graphql`
             categories
             date(formatString: "YYYY.MM.DD")
             title
+            order
           }
         }
       }

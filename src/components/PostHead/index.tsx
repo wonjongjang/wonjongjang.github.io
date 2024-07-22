@@ -95,9 +95,9 @@ export default function PostHead({
         </S_PostHeadContainer>
       ) : (
         <S_PostHeadContainer>
-          <S_DateWrapper>
+          {/* <S_DateWrapper>
             <S_Date>{date}</S_Date>
-          </S_DateWrapper>
+          </S_DateWrapper> */}
           <S_TitleWrapper>{title}</S_TitleWrapper>
         </S_PostHeadContainer>
       )}

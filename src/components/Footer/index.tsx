@@ -25,7 +25,7 @@ export default function Footer() {
                     c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"
               ></path>
             </S_Icon>
-            <S_Icon
+            {/* <S_Icon
               viewBox="0 0 40.2 40.3"
               onClick={() => window.open('https://www.instagram.com/1xong/')}
             >
@@ -47,7 +47,7 @@ export default function Footer() {
                 ></path>
                 <path d="M33.4,9.4c0,1.3-1.1,2.4-2.4,2.4s-2.4-1.1-2.4-2.4s1-2.4,2.3-2.4C32.2,7,33.4,8.1,33.4,9.4L33.4,9.4z"></path>
               </g>
-            </S_Icon>
+            </S_Icon> */}
           </S_IconWrapper>
           <S_Copy>&copy; 2023 Wonjong Jang. Built with Gatsby.</S_Copy>
         </S_BottomWrapper>
