@@ -53,5 +53,5 @@ HTML 문서, 이미지, 스타일 및 기타 파일과 같은 웹 리소스를 
 
 # 참고
 
-- [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-- [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [An overview of HTTP - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [HTTP request methods - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
