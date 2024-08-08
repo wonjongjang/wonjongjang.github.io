@@ -34,9 +34,18 @@ order: 30
 
 ## content-box
 
-![content1](./img/content-box-1.png)
+```css
+.content-box {
+	background-color: goldenrod;
+	width: 350px;
+	height: 150px;
+	margin: 25px;
+	padding: 25px;
+	border: 5px solid black;
+}
+```
 
-![content2](./img/content-box-2.png)
+![content](./img/content-box.png)
 
 실제 너비 = 5 + 25 + 350 + 25 + 5 = 410px
 
@@ -44,9 +53,19 @@ order: 30
 
 ## border-box
 
-![border1](./img/border-box-1.png)
+```css
+.border-box {
+	background-color: goldenrod;
+	width: 350px;
+	height: 150px;
+	margin: 25px;
+	padding: 25px;
+	border: 5px solid black;
+	box-sizing: border-box;
+}
+```
 
-![border2](./img/border-box-2.png)
+![border](./img/border-box.png)
 
 실제 너비 = 5 + 25 + 290 + 25 + 5 = 350px
 
