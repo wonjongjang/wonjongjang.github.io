@@ -4,6 +4,7 @@ categories: ['JavaScript']
 date: ''
 title: 'JavaScript란?'
 summary: 'JavaScript가 무엇인지, 왜 사용하는지, 시작 방법 설명'
+order: 200
 ---
 
 # What?
@@ -58,4 +59,4 @@ summary: 'JavaScript가 무엇인지, 왜 사용하는지, 시작 방법 설명'
 
 # 참고
 
-- [PoiemaWeb](https://poiemaweb.com/)
+- [PoiemaWeb](https://poiemaweb.com/js-introduction)

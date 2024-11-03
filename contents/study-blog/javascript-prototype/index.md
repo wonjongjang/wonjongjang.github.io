@@ -1,73 +1,114 @@
 ---
 page: 'study-blog'
 categories: ['JavaScript']
-date: '2022-08-08'
+date: ''
 title: '프로토타입(Prototype)'
-summary: 'JavaScript 프로토타입 객체'
+summary: 'JavaScript 상속, 프로토타입 객체'
+order: 216
 ---
 
-모든 객체는 자신의 부모 역할을 담당하는 객체와 연결되어 있는데 이러한 부모 객체를 지칭
+# 상속과 프로토타입
 
-객체 지향의 상속 개념과 같이 부모 객체의 프로퍼티/메소드를 상속 받아 사용 가능
+자바스크립트는 프로토타입 기반으로 상속을 구현하여 불필요한 중복 제거 (기존 코드 재사용) → 개발 비용↓
 
-# 객체 리터럴로 생성된 객체
-
-```js
-const person = {
-  name: 'Won'
-};
-
-console.log(person);
-
-console.log(person.__proto__ === Object.prototype); // true
-```
-
-<img title="" src="./img/prototype_console.png" alt="post" data-align="inline">
-
-- [[Prototype]]
-  
-  - 모든 객체가 보유한 인터널 슬롯
-  
-  - 객체의 입장에서 자신의 부모 역할을 하는 프로토타입 객체를 가리키며, 함수 객체의 경우 `Function.prototype`를 가리킴
-
-- constructor
-  
-  - 객체의 입장에서 자신을 생성한 객체를 가리킴
-
-# 생성자 함수로 생성된 객체
-
-```js
-function Person(name) {
-  this.name = name;
+```javascript
+// 생성자 함수
+function Person(firstName, lastName, email) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.email = email;
+	this.getFullName = function () {
+		return `${this.lastName} ${this.firstName}`;
+	};
 }
 
-const temp = new Person('Won');
+// 인스턴스 생성
+const person1 = new Person('won', 'Jang', 'won@abc.com');
+const person2 = new Person('andy', 'Ahn', 'andy@abc.com');
 
-console.dir(Person); // prototype 프로퍼티 O
-console.dir(temp);   // prototype 프로퍼티 X
+console.log(person1.getFullName === person2.getFullName); // false
 
-console.log(Person.__proto__ === Function.prototype);
-
-console.log(temp.__proto__ === Person.prototype);
-
-// Person() 생성자 함수에 의해 생성된 객체를 생성한 객체는 Person() 생성자 함수
-console.log(Person.prototype.constructor === Person);
-
-// temp 객체를 생성한 객체는 Person() 생성자 함수
-console.log(temp.constructor === Person);
-
-// Person() 생성자 함수를 생성한 객체는 Function() 생성자 함수
-console.log(Person.constructor === Function);
+console.log(person1.getFullName()); // Jang won
+console.log(person2.getFullName()); // Ahn andy
 ```
 
-![post](./img/function_prototype_console.png)
+![ex_1](./img/ex_1.png)
 
-- prototype
+인스턴스를 생성할 때마다 동일한 동작을 하는 getFullName 메서드를 중복 생성하고 모든 인스턴스가 중복 소유함
+
+중복된 메서드를 하나만 생성하여 모든 인스턴스가 공유해서 사용하는 것이 바람직
+
+- 프로토타입에 추가
+
+  ```javascript
+  function Person(firstName, lastName, email) {
+  	this.firstName = firstName;
+  	this.lastName = lastName;
+  	this.email = email;
+  }
+  Person.prototype.getFullName = function () {
+  	return `${this.lastName} ${this.firstName}`;
+  };
   
-  - 함수 객체만 가지고 있는 프로퍼티
+  // 인스턴스 생성
+  const person1 = new Person('won', 'Jang', 'won@abc.com');
+  const person2 = new Person('andy', 'Ahn', 'andy@abc.com');
   
-  - 함수 객체가 생성자로 사용될 때 이 함수를 통해 생성될 객체의 부모 역할을 하는 객체(프로토타입 객체)를 가리킴
+  console.log(person1.getFullName === person2.getFullName); // true
+  
+  console.log(person1.getFullName()); // Jang won
+  console.log(person2.getFullName()); // Ahn andy
+  ```
+
+- Object.create()
+
+  명시적으로 프로토타입을 지정하여 새로운 객체 생성
+
+  ```javascript
+  function Person(firstName, lastName, email) {
+  	let person = Object.create(personsPrototype);
+  	this.firstName = firstName;
+  	this.lastName = lastName;
+  	this.email = email;
+  	return person;
+  }
+  const personsPrototype = {
+  	getFullName() {
+  		return `${this.lastName} ${this.firstName}`;
+  	},
+  };
+  
+  // 인스턴스 생성
+  const person1 = new Person('won', 'Jang', 'won@abc.com');
+  const person2 = new Person('andy', 'Ahn', 'andy@abc.com');
+  
+  console.log(person1.getFullName === person2.getFullName); // true
+  
+  console.log(person1.getFullName()); // Jang won
+  console.log(person2.getFullName()); // Ahn andy
+  ```
+
+![ex_2](./img/ex_2.png)
+
+# 프로토타입 객체
+
+객체 간 상속을 구현하기 위해 사용
+
+어떤 객체의 상위 객체의 역할을 하는 객체로서 다른 객체에 공유 프로퍼티/메서드를 제공
+
+모든 객체는 [[Prototype]]이라는 내부 슬롯을 가짐
+
+- [[Prototype]]에 저장되는 프로토타입은 객체 생성 방식에 의해 결정
+  - 객체 리터럴에 의해 생성된 객체 - Object.prototype
+  - 생성자 함수에 의해 생성된 객체 - prototype 프로퍼티에 바인딩되어 있는 객체
+- [[Prototype]] 내부 슬롯에 직접 접근 X, `__proto__` 접근자 프로퍼티를 통해 간접적으로 접근 가능
+
+# 프로토타입 체인
+
+객체의 프로퍼티/메서드에 접근하려고 할 때, 해당 객체에 접근하려는 프로퍼티가 없다면 [[Prototype]] 내부 슬롯의 참조를 따라 자신의 부모 역할을 하는 프로토타입의 프로퍼티를 순차적으로 검색
+
+상속과 프로퍼티 검색을 위한 메커니즘
 
 # 참고
 
-- [PoiemaWeb](https://poiemaweb.com/js-prototype#42-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%EA%B0%9D%EC%B2%B4%EC%9D%98-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EC%B2%B4%EC%9D%B8)
+- [PoiemaWeb](https://poiemaweb.com/js-prototype)

@@ -2,24 +2,28 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-export default function Awards() {
+export default function Certificates() {
   return (
     <S_Container>
-      <S_Title>Awards</S_Title>
+      <S_Title>Certificates</S_Title>
       <S_TypeList>
-        {AWARDS.map((award, i) => (
-          <S_Type key={i} isEnd={i === AWARDS.length - 1}>
-            <S_TypeTitle>{award.title}</S_TypeTitle>
+        {CERTIFICATE.map((c, i) => (
+          <S_Type key={i} isEnd={i === CERTIFICATE.length - 1}>
+            <S_TypeTitle>{c.title}</S_TypeTitle>
             <S_TypeContent>
               <S_ContentWrapper>
-                <span>
-                  {award.desc1}
-                  <br />
-                  {award.desc2}
-                </span>
+                {c.desc1 ? (
+                  <S_Description>
+                    {c.desc1}
+                    <br />
+                    {c.desc2}
+                  </S_Description>
+                ) : (
+                  <div />
+                )}
                 <S_DateWrapper>
-                  <span>{award.date}</span>
-                  <span>{award.host}</span>
+                  <span>{c.date}</span>
+                  <span>{c.host}</span>
                 </S_DateWrapper>
               </S_ContentWrapper>
             </S_TypeContent>
@@ -44,6 +48,17 @@ const S_DateWrapper = styled.div`
   }
   @media ${props => props.theme.device.mobile} {
     font-size: 15px;
+  }
+`
+
+const S_Description = styled.span`
+  width: 750px;
+
+  @media ${props => props.theme.device.laptop} {
+    width: 350px;
+  }
+  @media ${props => props.theme.device.tablet} {
+    width: 100%;
   }
 `
 
@@ -111,33 +126,47 @@ const S_Container = styled.div`
   margin-top: 80px;
 `
 
-const AWARDS = [
+const CERTIFICATE = [
   {
-    title: '우수상',
-    desc1: '자율 프로젝트 결선발표회 입상 - Solniverse',
-    desc2: '삼성 청년 SW 아카데미 자율 프로젝트 결선 발표회 우수팀',
-    date: '2022.05.31',
-    host: '삼성전자',
-  },
-  {
-    title: '우수상',
-    desc1: '자율 프로젝트 기업연계 1등 - Solniverse',
-    desc2: '삼성 청년 SW 아카데미 자율 프로젝트 우수팀',
-    date: '2022.05.27',
-    host: '삼성전자',
-  },
-  {
-    title: 'UCC 우수상',
-    desc1: '자율 프로젝트 UCC 2등 - Solniverse',
-    desc2: '삼성 청년 SW 아카데미 자율 프로젝트 UCC 경진대회 우수팀',
-    date: '2022.05.27',
-    host: '삼성전자',
-  },
-  {
-    title: '표창장 (학장상)',
-    desc1: '학업성적 우수 및 품행 단정',
+    title: '정보처리기사',
+    desc1: '',
     desc2: '',
-    date: '2019.02.21',
+    date: '2024.06.18',
+    host: '한국산업인력공단',
+  },
+  {
+    title: '6시그마(GB)',
+    desc1: '',
+    desc2: '',
+    date: '2021.01.12',
+    host: '한국자격검정평가진흥원',
+  },
+  {
+    title: 'Microsoft Office Specialist 2010 Master',
+    desc1: 'Excel 2010 Expert, PowerPoint 2010, Access 2010, Word 2010 Expert',
+    desc2: '',
+    date: '2019.08.23',
+    host: 'Microsoft',
+  },
+  {
+    title: 'ERP정보관리사 생산 2급',
+    desc1: '',
+    desc2: '',
+    date: '2019.08.13',
+    host: '한국생산성본부',
+  },
+  {
+    title: '스마트팩토리 운영관리사 2급',
+    desc1: '',
+    desc2: '',
+    date: '2018.12.12',
     host: '동아대학교',
+  },
+  {
+    title: '품질경영기사',
+    desc1: '',
+    desc2: '',
+    date: '2018.05.25',
+    host: '한국산업인력공단',
   },
 ]

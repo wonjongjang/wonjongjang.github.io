@@ -4,9 +4,9 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from 'components/Layout'
-import Skill from 'components/Main/Skill'
+import Skills from 'components/Main/Skills'
 // import History from 'components/Main/History'
-import Certificate from 'components/Main/Certificate'
+import Certificates from 'components/Main/Certificates'
 import Awards from 'components/Main/Awards'
 
 interface I_Home {
@@ -40,9 +40,9 @@ export default function Home({
         <S_PageDescript>프론트엔드 개발자 장원종입니다.</S_PageDescript>
       </S_FadeInAnimation>
 
-      <Skill />
+      <Skills />
       {/* <History /> */}
-      <Certificate />
+      <Certificates />
       <Awards />
     </Layout>
   )

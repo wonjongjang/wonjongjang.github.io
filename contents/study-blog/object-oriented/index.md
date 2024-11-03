@@ -1,9 +1,10 @@
 ---
 page: 'study-blog'
-categories: ['Software-Design']
-date: '2023-03-04'
+categories: ['Software-Design', 'JavaScript']
+date: ''
 title: '객체지향(Object-Oriented)'
 summary: '객체지향의 개념, 장점, 구성 요소, 설계 원칙'
+order: 214
 ---
 
 현실 세계의 개체를 하나의 객체로 만들어, 객체들을 조립해서 작성할 수 있는 기법
