@@ -36,8 +36,8 @@
   --color-canvas-default: #000000;
   --color-canvas-subtle: #161b22;
   --color-border-default: #30363d;
-  --color-border-muted: #21262d;
-  --color-neutral-muted: rgba(110, 118, 129, 0.4);
+  --color-border-muted: #484f58;
+  --color-neutral-muted: rgba(129, 124, 110, 0.4);
   --color-accent-fg: #58a6ff;
   --color-accent-emphasis: #1f6feb;
   --color-attention-subtle: rgba(187, 128, 9, 0.15);
